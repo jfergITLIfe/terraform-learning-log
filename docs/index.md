@@ -2,7 +2,7 @@
 
 A build-first reference for the **HashiCorp Certified: Terraform Associate (004)** exam.
 
-I'm learning Terraform and using this site to log my notes. Instead of a linear daily log, the content is organized around the **eight official exam objectives**. Each page grows as I work through concepts and builds into a reference I can grep before the exam — and that my GRC engineering study group can use too.
+I'm learning Terraform and using this site to log my notes. Instead of a linear daily log, the content is organized around the **eight official exam objectives**. Each page grows as I work through concepts and builds into a reference I can grep before the exam.
 
 [Start with the topics →](topics/index.md){ .md-button .md-button--primary }
 [Set up your environment →](setup.md){ .md-button }
