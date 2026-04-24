@@ -6,21 +6,21 @@ The eight objectives on the HashiCorp Certified: Terraform Associate (004) exam.
 
 <div class="topic-card" markdown>
 ### [01 — IaC Concepts](01-iac-concepts.md)
-<span class="coverage-badge coverage-empty">Empty</span>
+<span class="coverage-badge coverage-partial">Partial</span>
 
 What Infrastructure as Code is, why it beats click-ops, and where Terraform fits among the alternatives.
 </div>
 
 <div class="topic-card" markdown>
 ### [02 — Terraform's Purpose](02-terraform-purpose.md)
-<span class="coverage-badge coverage-empty">Empty</span>
+<span class="coverage-badge coverage-partial">Partial</span>
 
 Multi-cloud and provider-agnostic positioning, benefits of state, and Community Edition vs HCP Terraform.
 </div>
 
 <div class="topic-card" markdown>
 ### [03 — Core Workflow](03-core-workflow.md)
-<span class="coverage-badge coverage-empty">Empty</span>
+<span class="coverage-badge coverage-partial">Partial</span>
 
 `init`, `fmt`, `validate`, `plan`, `apply`, `destroy`. The CLI lifecycle you'll run ten thousand times.
 </div>
