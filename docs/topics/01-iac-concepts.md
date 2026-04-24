@@ -27,7 +27,6 @@
 
 - [HashiCorp: What is Infrastructure as Code?](https://www.hashicorp.com/resources/what-is-infrastructure-as-code)
 - [Terraform intro docs](https://developer.hashicorp.com/terraform/intro)
-- *KodeKloud:* Section on IaC fundamentals (paraphrased notes only)
 
 ## Commands cheat sheet
 

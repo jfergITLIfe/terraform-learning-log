@@ -63,4 +63,4 @@ HCP Terraform features, remote operations, CLI and VCS workflows, workspaces, va
 </div>
 
 !!! note "How this grows"
-    Topics are seeded with the official 004 objective and an outline. I fill them in as I work through each concept and paste notes. Screenshots for tooling and AWS console views live in `docs/assets/screenshots/` — anything from the KodeKloud course itself stays referenced by name rather than reproduced.
+    Topics are seeded with the official 004 objective and an outline. I fill them in as I work through each concept. Screenshots for tooling and AWS console views live in `docs/assets/screenshots/` — only my own captures, nothing reproduced from paid course material.

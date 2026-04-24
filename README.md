@@ -6,7 +6,7 @@ A build-first reference for the **HashiCorp Certified: Terraform Associate (004)
 
 ## What this is
 
-I'm working through the Terraform Associate path on KodeKloud, Brikman's *Terraform: Up & Running* (4th ed.), and Bryan Krausen's 004 practice exams. Rather than a linear daily log, this site is organized as a reference mapped to the eight exam objectives. Pages grow as I learn — by the time I sit the exam, this is the doc I'll grep before I walk in.
+I'm learning Terraform and using this site to log my notes. Rather than a linear daily log, the site is organized as a reference mapped to the eight official exam objectives. Pages grow as I learn — by the time I sit the exam, this is the doc I'll grep before I walk in.
 
 If you're studying along, clone the repo and run the code in each topic's folder. Open a [Discussion](../../discussions) if you get stuck.
 

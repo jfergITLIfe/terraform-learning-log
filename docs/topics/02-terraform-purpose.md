@@ -27,7 +27,6 @@
 
 - [Terraform use cases](https://developer.hashicorp.com/terraform/intro/v1.12.x/use-cases)
 - [Purpose of Terraform state](https://developer.hashicorp.com/terraform/language/v1.12.x/state/purpose)
-- *KodeKloud:* Terraform vs alternatives (paraphrased notes only)
 
 ## Commands cheat sheet
 
