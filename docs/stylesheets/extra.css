@@ -1,0 +1,93 @@
+/* Subtle customizations that respect the Material defaults */
+
+:root {
+  --md-primary-fg-color: #4c3aad;
+  --md-accent-fg-color: #d4a017;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #6d5dd3;
+  --md-accent-fg-color: #f5c24a;
+}
+
+/* Tighten heading weights for a cleaner editorial feel */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.5em;
+}
+
+/* Coverage badges for topic cards */
+.coverage-badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coverage-full {
+  background: #2e7d32;
+  color: white;
+}
+
+.coverage-partial {
+  background: #f5c24a;
+  color: #333;
+}
+
+.coverage-empty {
+  background: #9e9e9e;
+  color: white;
+}
+
+/* Topic grid */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.topic-card {
+  padding: 1.25rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.topic-card:hover {
+  border-color: var(--md-primary-fg-color);
+  transform: translateY(-2px);
+}
+
+.topic-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.05rem !important;
+}
+
+.topic-card p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Screenshots: border + rounded corners so they don't look dropped-in */
+.md-typeset img {
+  border-radius: 6px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  max-width: 100%;
+}
+
+/* Command cheatsheet tables look better without full-width */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
