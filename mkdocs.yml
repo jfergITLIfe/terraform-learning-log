@@ -1,12 +1,10 @@
-site_name: Terraform Learning Log
-site_description: A build-first reference for the HashiCorp Terraform Associate (004) exam.
+site_name: Terraform Core Workflow
+site_description: A one-page reference for the core Terraform CLI workflow.
 site_author: Jacob Ferguson
 site_url: https://jfergitlife.github.io/terraform-learning-log/
-
 repo_name: jfergITLife/terraform-learning-log
 repo_url: https://github.com/jfergITLife/terraform-learning-log
 edit_uri: edit/main/docs/
-
 theme:
   name: material
   palette:
@@ -30,8 +28,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.footer
     - toc.follow
@@ -42,10 +38,8 @@ theme:
     - content.action.edit
   icon:
     repo: fontawesome/brands/github
-
 extra_css:
   - stylesheets/extra.css
-
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -64,22 +58,6 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
-
-nav:
-  - Home: index.md
-  - Setup: setup.md
-  - Topics:
-    - topics/index.md
-    - "01 — IaC Concepts": topics/01-iac-concepts.md
-    - "02 — Terraform's Purpose": topics/02-terraform-purpose.md
-    - "03 — Core Workflow": topics/03-core-workflow.md
-    - "04 — Configuration & HCL": topics/04-configuration-hcl.md
-    - "05 — Modules": topics/05-modules.md
-    - "06 — State Management": topics/06-state-management.md
-    - "07 — Maintain Infrastructure": topics/07-maintain-infrastructure.md
-    - "08 — HCP Terraform": topics/08-hcp-terraform.md
-  - Resources: resources.md
-
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -87,5 +65,4 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/jfergitlife
   generator: false
-
 copyright: Built in public by Jacob Ferguson &middot; <a href="https://github.com/jfergITLife/terraform-learning-log">Source on GitHub</a>
