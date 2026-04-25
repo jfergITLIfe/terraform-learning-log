@@ -18,7 +18,7 @@ Terraform's workflow gets described two ways, and both show up on the exam. It h
 `Write → Plan → Apply`
 
 This is the philosophical loop. It describes what you're doing as a human: you write code, you review what it'll do, you commit to the changes.
-
+ 
 **The practical CLI commands you actually run — five (or six):**
 
 `init → validate → plan → apply → destroy`
@@ -64,6 +64,57 @@ Terraform configurations are iterative. You don't have to get it right the first
 ## Dependencies
 
 *Notes coming — implicit vs explicit, `depends_on`.*
+
+## terraform init
+
+`terraform init` is the first command you run in any Terraform project. It downloads the providers and modules your configuration declares, and sets up the working directory so the rest of the workflow can function. If you skip it, every other command will fail.
+
+### what init actually does
+
+Three things, in order:
+
+1. **Downloads providers.** Terraform reads your configuration, finds every `provider` block (aws, azurerm, google, etc.), and downloads the matching binaries from the Terraform Registry.
+2. **Downloads modules.** If your configuration uses `module` blocks pointing at external sources (Git, the registry, S3), init pulls those down too.
+3. **Initializes the backend.** If you've configured remote state (S3, Terraform Cloud, etc.), init wires that up. If you haven't, it sets up local state.
+
+### what init creates on disk
+
+Two artifacts. They look similar. They are not the same.
+
+| artifact | what it is | commit to git? |
+|---|---|---|
+| `.terraform/` | a directory holding the actual downloaded provider binaries and module code | no — gitignore it |
+| `.terraform.lock.hcl` | a file recording the exact versions and cryptographic hashes that got downloaded | yes — commit it |
+
+The mental model:
+
+- `.terraform/` is the stuff. Like `node_modules/` or `venv/`. Machine-specific, big, never committed.
+- `.terraform.lock.hcl` is the receipt. Tiny, text-based, version-controlled. It's what guarantees your teammate downloads the same provider versions you did when they run `init` on their own machine.
+
+### init is not just for new projects
+
+This is where the exam tries to trip you up. You run `terraform init` whenever the configuration's dependencies change, not just on day one. That includes:
+
+- starting a new project
+- cloning an existing repo for the first time
+- a teammate adds, removes, or upgrades a provider
+- a teammate adds, removes, or changes a module source
+- you change your backend configuration
+
+If `.terraform/` and your config files are out of sync, Terraform refuses to run `plan` or `apply` — it errors out and tells you to run `init`. The fix is always the same.
+
+!!! note "the one people miss on the exam"
+    `terraform init` is **idempotent and safe to re-run.** It will not destroy your state, your resources, or your lock file's pinned versions. If you're ever in doubt about whether to run it, just run it. The only time it changes anything is when your configuration's dependencies have actually changed.
+
+### useful flags
+
+| flag | what it does |
+|---|---|
+| `-upgrade` | bypasses the lock file and pulls the newest allowed provider versions, then rewrites the lock file |
+| `-reconfigure` | throws away the existing backend config and re-initializes from scratch (used when migrating backends) |
+| `-backend=false` | skips backend initialization (rarely needed, mostly for CI) |
+
+`-upgrade` is the one to remember. Default `init` respects the lock file and downloads exactly what's pinned. `init -upgrade` is how you intentionally bump versions.
 
 ## `terraform apply`
 
